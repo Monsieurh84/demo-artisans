@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Démo · Application de gestion d’interventions · Les Monsieurs</title>
+<meta name="description" content="Démo interactive : planning, application technicien sur iPhone et iPad, demandes clients avec photos, devis et chantiers.">
+<link rel="icon" href="data:,">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+<script src="demo/brand.js"></script>
+<link rel="stylesheet" href="demo/demo.css">
+<style>
+:root{--ink:#0E1630;--mute:#5E6680;--line:#E4E7EF;--bg:#F5F6FA}
+*{box-sizing:border-box}html,body{margin:0}body{font-family:Manrope,system-ui,sans-serif;color:var(--ink);background:var(--bg);-webkit-font-smoothing:antialiased}
+a{color:inherit}button,input,select{font:inherit;color:inherit}
+.i{width:1.15em;height:1.15em;vertical-align:-.2em;flex:none}
+.hero{background:var(--navy);color:#fff;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(900px 420px at 85% -10%,var(--electric),transparent 60%);opacity:.6}
+.hero .in{position:relative;max-width:1160px;margin:0 auto;padding:22px 20px 120px}
+.top{display:flex;align-items:center;gap:12px;font-weight:800}.top .lm{font-family:Sora,Manrope,sans-serif;letter-spacing:.02em}.top small{color:#B9C1D6;font-weight:600}
+.top a{margin-left:auto;text-decoration:none;font-size:14px;border:1px solid rgba(255,255,255,.25);border-radius:999px;padding:8px 14px}
+.hero h1{font-family:Sora,Manrope,sans-serif;font-size:clamp(30px,5vw,54px);line-height:1.05;letter-spacing:-.03em;margin:56px 0 16px;max-width:820px}
+.hero h1 em{font-style:normal;background:linear-gradient(90deg,#fff,var(--soft));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p.lead{font-size:clamp(16px,2vw,19px);color:#CDD3E3;max-width:680px;margin:0}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:26px}.chips span{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.14);border-radius:999px;padding:7px 12px;font-weight:700;font-size:14px}
+.wrap{max-width:1160px;margin:-80px auto 0;padding:0 20px 60px;position:relative}
+.grid{display:grid;grid-template-columns:1.25fr 1fr;gap:18px}
+.card{background:#fff;border-radius:22px;padding:24px;box-shadow:0 12px 40px rgba(14,22,48,.08);border:1px solid var(--line)}
+.card h2{font-family:Sora,Manrope,sans-serif;font-size:20px;margin:0 0 6px;letter-spacing:-.01em}.card .sub{color:var(--mute);margin:0 0 18px;font-size:15px}
+.go{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.go a{display:flex;flex-direction:column;gap:8px;text-decoration:none;border:1px solid var(--line);border-radius:18px;padding:18px;transition:.15s;min-height:150px}
+.go a:hover{border-color:var(--electric);box-shadow:0 10px 30px rgba(14,22,48,.08);transform:translateY(-2px)}
+.go a .ico{width:44px;height:44px;border-radius:12px;background:var(--soft);color:var(--indigo);display:grid;place-items:center}.go a .ico .i{width:22px;height:22px}
+.go a b{font-size:16.5px}.go a span{color:var(--mute);font-size:14px;line-height:1.4}
+.go a.main{grid-column:1/-1;background:var(--grad);color:#fff;border:0;min-height:0;flex-direction:row;align-items:center;gap:16px}
+.go a.main .ico{background:rgba(255,255,255,.16);color:#fff}.go a.main span{color:rgba(255,255,255,.82)}
+.go a.main .arr{margin-left:auto;font-size:24px}
+label.f{display:block;font-weight:800;font-size:13px;color:var(--mute);margin:12px 0 6px}
+.f input,.f select,select.f2,input.f2{width:100%;border:2px solid var(--line);border-radius:12px;padding:11px 12px;font-weight:600;background:#fff}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.colors{display:flex;gap:8px;flex-wrap:wrap}.colors button{width:34px;height:34px;border-radius:50%;border:3px solid #fff;box-shadow:0 0 0 1px var(--line);cursor:pointer}.colors button.on{box-shadow:0 0 0 2px var(--ink)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;border-radius:12px;padding:12px 16px;font-weight:800;text-decoration:none;cursor:pointer}
+.b1{background:var(--ink);color:#fff}.b2{background:#fff;border:2px solid var(--line)}
+.link{display:flex;gap:8px;margin-top:14px}.link input{flex:1;min-width:0;border:2px solid var(--line);border-radius:12px;padding:11px 12px;font-size:13px;color:var(--mute);background:var(--bg)}
+.qr{display:flex;gap:16px;align-items:center;margin-top:18px;padding-top:18px;border-top:1px solid var(--line)}.qr #qr{width:116px;height:116px;flex:none;border-radius:12px;overflow:hidden;background:#fff;border:1px solid var(--line);display:grid;place-items:center}.qr #qr img,.qr #qr svg{width:100%;height:100%}
+.qr p{margin:0;color:var(--mute);font-size:14px}.qr b{color:var(--ink)}
+.feats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:18px}
+.feat{background:#fff;border:1px solid var(--line);border-radius:18px;padding:18px}.feat .i{width:22px;height:22px;color:var(--electric)}.feat h3{font-size:16px;margin:10px 0 4px}.feat p{margin:0;color:var(--mute);font-size:14px;line-height:1.45}
+.cta{margin-top:18px;display:flex;align-items:center;gap:16px;flex-wrap:wrap;background:var(--navy);color:#fff;border-radius:22px;padding:24px}
+.cta h2{font-family:Sora,Manrope,sans-serif;margin:0;font-size:22px}.cta p{margin:4px 0 0;color:#C3CADC}.cta .btn{margin-left:auto;background:#fff;color:var(--ink)}
+.small{font-size:12.5px;color:var(--mute);margin-top:16px;text-align:center}
+@media (max-width:900px){.grid{grid-template-columns:1fr}.feats{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.go{grid-template-columns:1fr}.feats{grid-template-columns:1fr}.two{grid-template-columns:1fr}.cta .btn{margin-left:0;width:100%}}
+</style>
+</head>
+<body>
+<section class="hero"><div class="in">
+  <div class="top"><span class="lm">LES MONSIEURS</span><small>· applications sur mesure</small><a id="wa1" target="_blank" rel="noopener">Nous contacter</a></div>
+  <h1>Votre planning, vos techniciens et vos devis <em>dans une seule application.</em></h1>
+  <p class="lead">Démo interactive pour <b id="hn"></b> : testez-la comme si c’était la vôtre. Les demandes clients arrivent avec photos, le bureau planifie, les techniciens valident sur iPhone et le bureau contrôle.</p>
+  <div class="chips" id="chips"></div>
+</div></section>
+<main class="wrap">
+  <div class="grid">
+    <section class="card"><h2>Essayez la démo</h2><p class="sub">Tout est cliquable. Les données sont fictives et rien n’est envoyé.</p>
+      <div class="go" id="go"></div></section>
+    <section class="card"><h2>Personnaliser la démo</h2><p class="sub">Au nom de votre entreprise, en quelques secondes.</p>
+      <label class="f" for="m">Métier</label><div class="f"><select id="m"></select></div>
+      <label class="f" for="e">Nom de l’entreprise</label><div class="f"><input id="e" maxlength="40"></div>
+      <div class="two"><div><label class="f" for="v">Ville</label><div class="f"><input id="v" maxlength="40"></div></div><div><label class="f">Couleur</label><div class="colors" id="cl"></div></div></div>
+      <button class="btn b1" id="ap" style="width:100%;margin-top:16px">Appliquer</button>
+      <div class="link"><input id="lk" readonly aria-label="Lien de la démo personnalisée"><button class="btn b2" id="cp">Copier</button></div>
+      <div class="qr"><div id="qr"></div><p><b>Sur votre téléphone</b><br>Scannez pour ouvrir l’application technicien, puis « Partager » → « Sur l’écran d’accueil ».</p></div>
+    </section>
+  </div>
+  <div class="feats" id="feats"></div>
+  <div class="cta"><div><h2>Je veux la même pour mon entreprise</h2><p>Adaptée à votre métier, à vos couleurs, prête en quelques semaines. Sans abonnement logiciel.</p></div><a class="btn" id="wa2" target="_blank" rel="noopener">Échanger sur WhatsApp</a></div>
+  <p class="small">Démo réalisée par Les Monsieurs · <a href="#" id="rs">remettre la démo à zéro</a></p>
+</main>
+<script src="demo/mock.js"></script>
+<script src="app/icons.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js"></script>
+<script>
+const B = BRAND, $ = s => document.querySelector(s), q = location.search;
+const E = s => String(s == null ? '' : s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+$('#hn').textContent = B.nom; $('#wa1').href = $('#wa2').href = B.whatsapp;
+$('#chips').innerHTML = [['calendar', 'Planning glisser-déposer'], ['smartphone', 'App iPhone & iPad'], ['camera', 'Photos avant / après'], ['briefcase', 'Devis & relances'], ['helmet', 'Suivi de chantiers']].map(([i, t]) => `<span>${ic(i)}${t}</span>`).join('');
+$('#go').innerHTML = [
+  ['mixte.html', 'users', 'Bureau + technicien côte à côte', 'Voyez en direct une action du technicien arriver au bureau.', 'main'],
+  ['app/index.html', 'calendar', 'Application bureau', 'Planning de l’équipe, demandes, devis, chantiers, contrôle.'],
+  ['app/tech.html', 'smartphone', 'Application technicien', 'Sa journée, l’itinéraire, les photos, la validation.'],
+  ['demande.html', 'camera', 'Formulaire client', 'Le client décrit son besoin avec des photos guidées.'],
+  ['app/index.html#affaires', 'briefcase', 'Devis & relances', 'Du premier appel à la facture, rien ne se perd.'],
+].map(([h, i, t, d, c]) => `<a class="${c || ''}" href="${h.replace('#', q + '#').replace(/^([^#]*)$/, '$1' + q)}"><div class="ico">${ic(i)}</div><div><b>${t}</b><br><span>${d}</span></div>${c ? '<span class="arr">→</span>' : ''}</a>`).join('');
+$('#feats').innerHTML = [['inbox', 'Demandes avec photos', 'Le client envoie les bonnes photos dès la demande : vous venez avec le bon matériel.'], ['pin', 'Tâches « dans la journée »', 'Passer au fournisseur, déposer un devis : rappel automatique avant la fin de journée.'], ['map-pin', 'Itinéraire en un geste', 'Waze, Plans ou Google Maps, et un SMS « j’arrive » prêt à envoyer.'], ['check-circle', 'Contrôle par le bureau', 'Photos et commentaire obligatoires avant de valider : fini les oublis.'], ['clipboard', 'Vers votre facturation', 'Les devis acceptés partent en un clic vers votre logiciel de facturation.'], ['eye', 'Fonctionne sans réseau', 'En cave ou en zone blanche, tout part dès que le réseau revient.']].map(([i, t, d]) => `<div class="feat">${ic(i)}<h3>${t}</h3><p>${d}</p></div>`).join('');
+/* Personnalisation */
+const M = B.METIERS, COLS = ['#1E5BB8', '#0891B2', '#4D7C0F', '#D97706', '#B91C1C', '#7C3AED', '#0F172A'];
+let col = B.couleur;
+$('#m').innerHTML = Object.entries(M).map(([k, v]) => `<option value="${k}" ${k === B.metier ? 'selected' : ''}>${v.label}</option>`).join('');
+$('#e').value = B.nom; $('#v').value = B.ville;
+const drawCols = () => { $('#cl').innerHTML = [...new Set([col, ...COLS])].slice(0, 7).map(c => `<button style="background:${c}" class="${c === col ? 'on' : ''}" data-c="${c}" aria-label="Couleur ${c}"></button>`).join(''); $('#cl').querySelectorAll('button').forEach(b => b.onclick = () => { col = b.dataset.c; drawCols(); }); };
+drawCols();
+$('#m').onchange = () => { const mm = M[$('#m').value]; $('#e').value = mm.nom; col = mm.couleur; drawCols(); };
+const params = () => new URLSearchParams({ m: $('#m').value, e: $('#e').value.trim() || M[$('#m').value].nom, v: $('#v').value.trim() || 'Avignon', c: col.replace('#', '') }).toString();
+const base = location.href.split(/[?#]/)[0].replace(/index\.html$/, '');
+$('#ap').onclick = () => { location.search = params(); };
+const link = base + '?' + new URLSearchParams({ m: B.metier, e: B.nom, v: B.ville, c: B.couleur.replace('#', '') }).toString();
+$('#lk').value = link;
+$('#cp').onclick = async () => { try { await navigator.clipboard.writeText($('#lk').value); LM_TOAST('Lien copié : envoyez-le à votre prospect'); } catch (e) { $('#lk').select(); } };
+$('#rs').onclick = e => { e.preventDefault(); if (confirm('Remettre la démo à zéro ?')) LM_DEMO_RESET(); };
+try { const qr = qrcode(0, 'M'); qr.addData(base + 'app/tech.html?' + new URLSearchParams({ m: B.metier, e: B.nom, v: B.ville, c: B.couleur.replace('#', '') })); qr.make(); $('#qr').innerHTML = qr.createSvgTag({ cellSize: 4, margin: 2, scalable: true }); } catch (e) { $('#qr').textContent = 'QR'; }
+</script>
+<script src="demo/demo.js"></script>
+</body>
+</html>
