@@ -20,7 +20,7 @@ a{color:inherit}button,input,select{font:inherit;color:inherit}
 .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(900px 420px at 85% -10%,var(--electric),transparent 60%);opacity:.6}
 .hero .in{position:relative;max-width:1160px;margin:0 auto;padding:22px 20px 120px}
 .top{display:flex;align-items:center;gap:12px;font-weight:800}.top .lm{font-family:Sora,Manrope,sans-serif;letter-spacing:.02em}.top small{color:#B9C1D6;font-weight:600}
-.top a{margin-left:auto;text-decoration:none;font-size:14px;border:1px solid rgba(255,255,255,.25);border-radius:999px;padding:8px 14px}
+.top a{text-decoration:none;font-size:14px;border:1px solid rgba(255,255,255,.25);border-radius:999px;padding:8px 14px}
 .hero h1{font-family:Sora,Manrope,sans-serif;font-size:clamp(30px,5vw,54px);line-height:1.05;letter-spacing:-.03em;margin:56px 0 16px;max-width:820px}
 .hero h1 em{font-style:normal;background:linear-gradient(90deg,#fff,var(--soft));-webkit-background-clip:text;background-clip:text;color:transparent}
 .hero p.lead{font-size:clamp(16px,2vw,19px);color:#CDD3E3;max-width:680px;margin:0}
@@ -49,7 +49,7 @@ label.f{display:block;font-weight:800;font-size:13px;color:var(--mute);margin:12
 .feats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:18px}
 .feat{background:#fff;border:1px solid var(--line);border-radius:18px;padding:18px}.feat .i{width:22px;height:22px;color:var(--electric)}.feat h3{font-size:16px;margin:10px 0 4px}.feat p{margin:0;color:var(--mute);font-size:14px;line-height:1.45}
 .cta{margin-top:18px;display:flex;align-items:center;gap:16px;flex-wrap:wrap;background:var(--navy);color:#fff;border-radius:22px;padding:24px}
-.cta h2{font-family:Sora,Manrope,sans-serif;margin:0;font-size:22px}.cta p{margin:4px 0 0;color:#C3CADC}.cta .btn{margin-left:auto;background:#fff;color:var(--ink)}
+.cta h2{font-family:Sora,Manrope,sans-serif;margin:0;font-size:22px}.cta p{margin:4px 0 0;color:#C3CADC}.cta .btn{background:#fff;color:var(--ink)}.cta #tf2{margin-left:auto}
 .small{font-size:12.5px;color:var(--mute);margin-top:16px;text-align:center}
 @media (max-width:900px){.grid{grid-template-columns:1fr}.feats{grid-template-columns:1fr 1fr}}
 @media (max-width:560px){.go{grid-template-columns:1fr}.feats{grid-template-columns:1fr}.two{grid-template-columns:1fr}.cta .btn{margin-left:0;width:100%}}
@@ -57,7 +57,7 @@ label.f{display:block;font-weight:800;font-size:13px;color:var(--mute);margin:12
 </head>
 <body>
 <section class="hero"><div class="in">
-  <div class="top"><span class="lm">LES MONSIEURS</span><small>· applications sur mesure</small><a id="wa1" target="_blank" rel="noopener">Nous contacter</a></div>
+  <div class="top"><span class="lm">LES MONSIEURS</span><small>· applications sur mesure</small><a id="tf" style="margin-left:auto;border:0">Tarifs</a><a id="wa1" target="_blank" rel="noopener" style="margin-left:8px">Nous contacter</a></div>
   <h1>Votre planning, vos techniciens et vos devis <em>dans une seule application.</em></h1>
   <p class="lead">Démo interactive pour <b id="hn"></b> : testez-la comme si c’était la vôtre. Les demandes clients arrivent avec photos, le bureau planifie, les techniciens valident sur iPhone et le bureau contrôle.</p>
   <div class="chips" id="chips"></div>
@@ -76,7 +76,7 @@ label.f{display:block;font-weight:800;font-size:13px;color:var(--mute);margin:12
     </section>
   </div>
   <div class="feats" id="feats"></div>
-  <div class="cta"><div><h2>Je veux la même pour mon entreprise</h2><p>Adaptée à votre métier, à vos couleurs, prête en quelques semaines. Sans abonnement logiciel.</p></div><a class="btn" id="wa2" target="_blank" rel="noopener">Échanger sur WhatsApp</a></div>
+  <div class="cta"><div><h2>Je veux la même pour mon entreprise</h2><p>Adaptée à votre métier, à vos couleurs, prête en quelques semaines. Sans abonnement logiciel.</p></div><a class="btn" id="tf2" style="background:transparent;color:#fff;border:2px solid rgba(255,255,255,.3)">Voir les tarifs</a><a class="btn" id="wa2" target="_blank" rel="noopener">Échanger sur WhatsApp</a></div>
   <p class="small">Démo réalisée par Les Monsieurs · <a href="#" id="rs">remettre la démo à zéro</a></p>
 </main>
 <script src="demo/mock.js"></script>
@@ -85,7 +85,7 @@ label.f{display:block;font-weight:800;font-size:13px;color:var(--mute);margin:12
 <script>
 const B = BRAND, $ = s => document.querySelector(s), q = location.search;
 const E = s => String(s == null ? '' : s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
-$('#hn').textContent = B.nom; $('#wa1').href = $('#wa2').href = B.whatsapp;
+$('#hn').textContent = B.nom; $('#tf').href = $('#tf2').href = 'offre.html' + q; $('#wa1').href = $('#wa2').href = B.whatsapp;
 $('#chips').innerHTML = [['calendar', 'Planning glisser-déposer'], ['smartphone', 'App iPhone & iPad'], ['camera', 'Photos avant / après'], ['briefcase', 'Devis & relances'], ['helmet', 'Suivi de chantiers']].map(([i, t]) => `<span>${ic(i)}${t}</span>`).join('');
 $('#go').innerHTML = [
   ['mixte.html', 'users', 'Bureau + technicien côte à côte', 'Voyez en direct une action du technicien arriver au bureau.', 'main'],

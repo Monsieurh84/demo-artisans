@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Tarifs · Application de gestion d’interventions · Les Monsieurs</title>
+<meta name="description" content="Une application sur mesure pour gérer vos techniciens, vos devis et vos chantiers, sans abonnement logiciel. À partir de 3 900 €.">
+<link rel="icon" href="data:,">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+<script src="demo/brand.js"></script>
+<link rel="stylesheet" href="demo/demo.css">
+<style>
+:root{--ink:#0E1630;--mute:#5E6680;--line:#E4E7EF;--bg:#F5F6FA;--dark:#0B1020;--ok:#0E9F6E}
+*{box-sizing:border-box}html,body{margin:0}body{font-family:Manrope,system-ui,sans-serif;color:var(--ink);background:var(--bg);-webkit-font-smoothing:antialiased}
+a{color:inherit}h1,h2,h3{font-family:Sora,Manrope,sans-serif;letter-spacing:-.02em;margin:0}
+.i{width:1.1em;height:1.1em;vertical-align:-.18em;flex:none}
+.in{max-width:1160px;margin:0 auto;padding:0 20px}
+.hero{background:var(--dark);color:#fff;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(900px 420px at 85% -10%,var(--electric),transparent 60%);opacity:.55}
+.hero .in{position:relative;padding:22px 20px 70px}
+.top{display:flex;align-items:center;gap:12px;font-weight:800}.top small{color:#B9C1D6;font-weight:600}.top a{margin-left:auto;text-decoration:none;font-size:14px;border:1px solid rgba(255,255,255,.25);border-radius:999px;padding:8px 14px}
+.hero h1{font-size:clamp(30px,5vw,52px);line-height:1.06;margin:50px 0 14px;max-width:860px}
+.hero p{font-size:clamp(16px,2vw,19px);color:#CDD3E3;max-width:700px;margin:0}
+.launch{display:inline-flex;gap:10px;align-items:center;margin-top:24px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);border-radius:14px;padding:10px 14px;font-weight:700}
+.launch b{background:#FFD24D;color:#1B1300;border-radius:8px;padding:3px 8px;font-size:13px}
+section{padding:56px 0}section h2{font-size:clamp(24px,3.4vw,34px);margin-bottom:8px}.lead{color:var(--mute);font-size:17px;margin:0 0 28px;max-width:760px}
+.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;align-items:start}
+.plan{background:#fff;border:1px solid var(--line);border-radius:22px;padding:24px;position:relative;display:flex;flex-direction:column;gap:10px}
+.plan.reco{border:2px solid var(--electric);box-shadow:0 20px 50px rgba(14,22,48,.12);transform:translateY(-8px)}
+.badge{position:absolute;top:-13px;left:24px;background:var(--electric);color:#fff;font-weight:800;font-size:12px;border-radius:999px;padding:5px 12px}
+.plan h3{font-size:24px}.ps{margin:0;color:var(--mute);font-weight:700}
+.price{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px;margin:6px 0}.price s{color:#9AA1B6;font-weight:700}.price b{font-family:Sora,Manrope,sans-serif;font-size:38px}.price small{flex-basis:100%;color:var(--mute);font-weight:600}
+.for{margin:0;font-size:14.5px;color:var(--mute)}
+.plan ul{list-style:none;padding:0;margin:6px 0;display:grid;gap:8px;font-size:14.5px}.plan li{display:flex;gap:8px}.plan li .i{color:var(--ok);margin-top:2px}
+.del{margin:4px 0 0;font-weight:800;font-size:14px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;border-radius:12px;padding:13px 16px;font-weight:800;text-decoration:none;cursor:pointer}
+.b1{background:var(--grad);color:#fff}.b2{background:#fff;border:2px solid var(--line)}.b3{background:#fff;color:var(--ink)}
+.plan .btn{margin-top:auto}
+.calc{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.box{background:#fff;border:1px solid var(--line);border-radius:22px;padding:24px}
+.box label{font-weight:800;display:block;margin-bottom:10px}.box input[type=range]{width:100%;accent-color:var(--electric)}
+.big{font-family:Sora,Manrope,sans-serif;font-size:34px;font-weight:800}.big.ok{color:var(--ok)}.muted{color:var(--mute);font-size:14px}
+.bar{height:12px;border-radius:9px;background:var(--bg);overflow:hidden;margin:8px 0 4px}.bar i{display:block;height:100%;border-radius:9px}
+table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden}td{padding:14px 16px;border-top:1px solid var(--line);vertical-align:top}tr:first-child td{border-top:0}td:last-child{text-align:right;font-weight:800;white-space:nowrap}td span{color:var(--mute);font-size:14px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;counter-reset:s}
+.step{background:#fff;border:1px solid var(--line);border-radius:18px;padding:20px}.step::before{counter-increment:s;content:counter(s);display:grid;place-items:center;width:34px;height:34px;border-radius:10px;background:var(--soft);color:var(--indigo);font-weight:800;margin-bottom:10px}
+.step h3{font-size:17px;margin-bottom:6px}.step p{margin:0;color:var(--mute);font-size:14.5px}
+.faq details{background:#fff;border:1px solid var(--line);border-radius:16px;padding:16px 18px;margin-bottom:10px}.faq summary{font-weight:800;cursor:pointer}.faq p{color:var(--mute);margin:10px 0 0}
+.cta{background:var(--dark);color:#fff;border-radius:26px;padding:34px;display:flex;align-items:center;gap:20px;flex-wrap:wrap}.cta p{color:#C3CADC;margin:6px 0 0}.cta .btns{margin-left:auto;display:flex;gap:10px;flex-wrap:wrap}
+.small{font-size:12.5px;color:var(--mute);text-align:center;padding:20px}
+@media (max-width:960px){.plans,.steps{grid-template-columns:1fr}.plan.reco{transform:none}.calc,.two{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header class="hero"><div class="in">
+  <div class="top"><span>LES MONSIEURS</span><small>· applications sur mesure pour artisans</small><a href="index.html" id="demo1">Voir la démo</a></div>
+  <h1>Votre application, à votre nom.<br>Payée une fois. Sans abonnement logiciel.</h1>
+  <p>Planning, application des techniciens, demandes clients avec photos, devis et chantiers : tout ce qu’un logiciel du marché fait, adapté à votre façon de travailler, pour le prix d’environ 2 ans d’abonnement.</p>
+  <div class="launch"><b>LANCEMENT</b> Prix réduits + 3 mois de contrat Sérénité offerts jusqu’au 15 décembre 2026 · 5 places par mois</div>
+</div></header>
+<main>
+<section><div class="in">
+  <h2>Trois formules, un seul paiement</h2><p class="lead">Comptes illimités dans toutes les formules : pas de surcoût quand vous embauchez. Règlement en 3 fois : 40 % à la signature · 30 % à la mise en service · 30 % à la livraison finale.</p>
+  <div class="plans"><article class="plan">
+  <h3>Essentiel</h3><p class="ps">Planning + application terrain</p>
+  <div class="price"><s>4 500 €</s><b>3 900 €</b><small>une fois · TVA non applicable</small></div>
+  <p class="for">Entreprises de 3 à 10 techniciens qui veulent d’abord sortir du papier et de WhatsApp.</p>
+  <ul><li><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Planning de l’équipe (semaine / jour) en glisser-déposer, absences, couleurs par technicien</li><li><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Tâches « dans la journée » avec rappel automatique avant le soir</li><li><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Application technicien iPhone, iPad et Android : itinéraire Waze/Plans/Google, SMS « j’arrive », photos avant/après, validation</li><li><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Fonctionne sans réseau (synchronisation automatique)</li><li><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Contrôle par le bureau des interventions terminées (photos + commentaire)</li><li><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Pièces jointes (photos, vidéos, PDF) et matériel nécessaire sur chaque intervention</li><li><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Comptes illimités, à vos couleurs et avec votre logo</li><li><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Formation de l’équipe (visio ou sur place) + 1 mois d’ajustements</li></ul>
+  <p class="del">Mise en service : 2 à 3 semaines</p>
+  <a class="btn b2" data-wa="Essentiel">Choisir Essentiel</a>
+</article><article class="plan reco"><span class="badge">Le plus choisi</span>
+  <h3>Pro</h3><p class="ps">Tout l’activité, de la demande à la facture</p>
+  <div class="price"><s>7 900 €</s><b>6 900 €</b><small>une fois · TVA non applicable</small></div>
+  <p class="for">Entreprises qui veulent aussi suivre leurs devis, leurs chantiers et capter plus de demandes.</p>
+  <ul><li><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Tout Essentiel</li><li><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Formulaire de demande client avec photos guidées, à intégrer sur votre site</li><li><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Affaires : devis de toutes sources, chiffrage, relances automatiques, chiffre en attente / accepté</li><li><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Chantiers sur plusieurs jours : avancement, journées planifiées, journal de chantier</li><li><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Export « prêt à facturer » vers votre logiciel de facturation</li><li><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Gestion des accès (bureau / chef d’équipe / technicien) et des mots de passe par le bureau</li><li><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>2 mois d’ajustements après la mise en service</li></ul>
+  <p class="del">Mise en service : 3 à 4 semaines</p>
+  <a class="btn b1" data-wa="Pro">Choisir Pro</a>
+</article><article class="plan">
+  <h3>Pro + Site</h3><p class="ps">L’application + un site qui ramène des clients</p>
+  <div class="price"><s>9 900 €</s><b>8 900 €</b><small>une fois · TVA non applicable</small></div>
+  <p class="for">Entreprises qui veulent aussi être trouvées sur Google dans leur zone.</p>
+  <ul><li><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Tout Pro</li><li><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Site vitrine sur mesure, rapide et optimisé pour Google (pages par ville et par service)</li><li><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Demandes de devis avec photos branchées directement dans l’application</li><li><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Fiche Google Business optimisée</li><li><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>3 mois d’ajustements après la mise en service</li></ul>
+  <p class="del">Mise en service : 4 à 5 semaines</p>
+  <a class="btn b2" data-wa="Pro + Site">Choisir Pro + Site</a>
+</article></div>
+</div></section>
+<section style="padding-top:0"><div class="in">
+  <h2>Combien vous coûterait un abonnement ?</h2><p class="lead">Les logiciels du marché se paient par utilisateur et par mois, pour toujours. Faites le calcul avec votre équipe.</p>
+  <div class="calc">
+    <div class="box"><label for="u">Nombre de personnes qui utilisent l’outil : <span id="uv">8</span></label><input type="range" id="u" min="2" max="30" value="8">
+      <p class="muted">Base : 40 € par utilisateur et par mois pour la gestion d’interventions + 50 € par mois pour le devis-facture (moyenne du marché).</p></div>
+    <div class="box"><div class="muted">Abonnements du marché sur 3 ans</div><div class="big" id="saas"></div><div class="bar"><i id="b1" style="background:#E5484D"></i></div>
+      <div class="muted" style="margin-top:12px">Votre application (formule Pro) + hébergement sur 3 ans</div><div class="big ok" id="nous"></div><div class="bar"><i id="b2" style="background:var(--ok)"></i></div>
+      <p style="margin:10px 0 0;font-weight:800" id="eco"></p></div>
+  </div>
+</div></section>
+<section style="padding-top:0"><div class="in two">
+  <div><h2 style="font-size:24px;margin-bottom:14px">Options</h2><table><tr><td>Reprise de vos données (clients, chantiers, planning existant)</td><td>à partir de 390 €</td></tr><tr><td>Connexion avancée à votre logiciel de facturation (import automatisé)</td><td>à partir de 490 €</td></tr><tr><td>Multi-agences / multi-dépôts</td><td>1 500 €</td></tr><tr><td>Module sur mesure (contrats d’entretien, stock, pointage…)</td><td>sur devis</td></tr></table></div>
+  <div><h2 style="font-size:24px;margin-bottom:14px">Après la livraison</h2><table><tr><td><b>Hébergement et sauvegardes</b><br><span>Payé directement à l’hébergeur, sur votre compte : vous restez propriétaire.</span></td><td>au prix coûtant, environ 25 €/mois</td></tr><tr><td><b>Contrat Sérénité (recommandé)</b><br><span>Mises à jour, corrections, surveillance, support prioritaire et 1 h d’évolutions par mois. Sans engagement au-delà de 12 mois.</span></td><td>79 €/mois</td></tr><tr><td><b>Intervention hors contrat</b><br><span>Évolutions ou demandes ponctuelles.</span></td><td>45 €/h</td></tr></table></div>
+</div></section>
+<section style="padding-top:0"><div class="in">
+  <h2>Comment ça se passe</h2><p class="lead">Une application qui tourne chez vous en quelques semaines, pas en quelques mois.</p>
+  <div class="steps">
+    <div class="step"><h3>Démo à votre nom</h3><p>Vous testez l’application avec votre métier et vos couleurs, sur ordinateur et téléphone.</p></div>
+    <div class="step"><h3>Rendez-vous de 30 min</h3><p>On liste ensemble ce qui doit coller à votre façon de travailler. Devis le jour même.</p></div>
+    <div class="step"><h3>Mise en service</h3><p>Votre application, vos comptes, la formation de l’équipe. Vous l’utilisez pour de vrai.</p></div>
+    <div class="step"><h3>Ajustements et livraison</h3><p>On ajuste avec vos retours de terrain, puis on livre la version finale.</p></div>
+  </div>
+</div></section>
+<section style="padding-top:0"><div class="in">
+  <h2>Comparé au marché</h2><p class="lead">Repères de prix publics relevés en 2026.</p><table><tr><td>Logiciels de gestion d’interventions (Organilog, Synchroteam, Praxedo, Yuman…)</td><td>19 à 129 € par utilisateur et par mois</td></tr><tr><td>Logiciels de devis-facture bâtiment (Obat, Batappli, Tolteck…)</td><td>19 à 129 € par mois, + utilisateurs supplémentaires</td></tr><tr><td>Application métier sur mesure en agence</td><td>25 000 à 70 000 € HT + 15 % par an de maintenance</td></tr></table>
+</div></section>
+<section style="padding-top:0"><div class="in faq">
+  <h2 style="margin-bottom:18px">Questions fréquentes</h2>
+  <details><summary>À qui appartient l’application ?</summary><p>À vous. Elle est hébergée sur votre propre compte, vous ne dépendez d’aucun abonnement logiciel. Vous payez seulement l’hébergement, au prix coûtant.</p></details>
+  <details><summary>Mes techniciens ne sont pas à l’aise avec la technologie.</summary><p>L’application technicien est pensée pour eux : gros boutons, 3 étapes, elle marche même sans réseau. La formation de l’équipe est incluse.</p></details>
+  <details><summary>Je garde mon logiciel de facturation ?</summary><p>Oui. Les devis acceptés partent en un clic vers votre logiciel de facturation (export prêt à facturer). La facture reste dans votre logiciel habituel.</p></details>
+  <details><summary>Et si j’ai besoin d’une fonction en plus plus tard ?</summary><p>C’est l’avantage du sur mesure : on l’ajoute. Le contrat Sérénité comprend 1 h d’évolutions par mois, au-delà c’est 45 €/h ou sur devis.</p></details>
+  <details><summary>Combien de temps avant de l’utiliser ?</summary><p>De 2 à 5 semaines selon la formule. La première version utilisable arrive dès la mise en service.</p></details>
+  <details><summary>Déjà en service quelque part ?</summary><p>Oui : l’application tourne dans une entreprise de plomberie de 7 personnes des Bouches-du-Rhône (bureau, chef d’équipe et techniciens sur iPhone).</p></details>
+</div></section>
+<section style="padding-top:0"><div class="in"><div class="cta">
+  <div><h2>On en parle 15 minutes ?</h2><p>Je vous montre la démo à votre nom et je vous dis quelle formule vous convient.</p></div>
+  <div class="btns"><a class="btn b3" id="wa">Échanger sur WhatsApp</a><a class="btn b2" style="background:transparent;color:#fff;border-color:rgba(255,255,255,.3)" href="tel:+33652041725">06 52 04 17 25</a></div>
+</div></div></section>
+</main>
+<p class="small">Les Monsieurs · El Bourachdi Hatim (EI) · Prix nets, TVA non applicable (art. 293 B du CGI) · Offre de lancement valable jusqu’au 15 décembre 2026.</p>
+<script src="demo/mock.js"></script>
+<script>
+const q = location.search, B = BRAND;
+document.getElementById('demo1').href = 'index.html' + q;
+const wa = t => 'https://wa.me/33652041725?text=' + encodeURIComponent(t);
+document.getElementById('wa').href = wa('Bonjour Hatim, je souhaite en savoir plus sur l’application pour mon entreprise.');
+document.querySelectorAll('[data-wa]').forEach(a => { a.href = wa('Bonjour Hatim, la formule ' + a.dataset.wa + ' m’intéresse pour mon entreprise. Pouvez-vous me rappeler ?'); a.target = '_blank'; a.rel = 'noopener'; });
+document.getElementById('wa').target = '_blank';
+const fmt = n => n.toLocaleString('fr-FR') + ' €', u = document.getElementById('u');
+const upd = () => { const n = +u.value, saas = (n * 40 + 50) * 36, nous = 6900 + 25 * 36;
+  document.getElementById('uv').textContent = n; document.getElementById('saas').textContent = fmt(saas); document.getElementById('nous').textContent = fmt(nous);
+  const m = Math.max(saas, nous); document.getElementById('b1').style.width = (saas / m * 100) + '%'; document.getElementById('b2').style.width = (nous / m * 100) + '%';
+  document.getElementById('eco').textContent = saas > nous ? 'Économie sur 3 ans : ' + fmt(saas - nous) + ', et ensuite l’application continue de vous appartenir.' : 'Pour une petite équipe, l’intérêt est surtout d’avoir un outil fait pour vous.'; };
+u.oninput = upd; upd();
+</script>
+<script src="demo/demo.js"></script>
+</body>
+</html>
