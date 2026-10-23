@@ -15,6 +15,7 @@
     <a href="${root}app/tech.html${qs}">Application technicien</a>
     <a href="${root}mixte.html${qs}">Bureau + technicien côte à côte</a>
     <a href="${root}demande.html${qs}">Formulaire client (demande avec photos)</a>
+    <a href="${root}offre.html${qs}">Tarifs et formules</a>
     <button type="button" id="lm-reset">Remettre la démo à zéro</button>
     <a class="lm-cta" href="${B.whatsapp}" target="_blank" rel="noopener">Je veux la même pour mon entreprise</a>
   </nav>`;
